@@ -37,7 +37,6 @@ namespace breakApp
             ViewWin();
             timer1_Tick(null, null);
             timer1.Enabled = true;
-
             if (Properties.Settings.Default.view)
                 Opacity = 1;
         }
@@ -62,7 +61,7 @@ namespace breakApp
                     Opacity = 0.1;
                 TopMost = true;
             }
-            if(Countdown == Properties.Settings.Default.workTime - 1 && second < 50 && !Properties.Settings.Default.view)
+            if(Countdown <= Properties.Settings.Default.workTime - 1 && second < 50 && !Properties.Settings.Default.view)
             {
                 Opacity = 0;
             }
@@ -82,6 +81,11 @@ namespace breakApp
                 if(!Properties.Settings.Default.view)
                     Opacity = 0;
                 TopMost = false;
+                Countdown = 0;
+            }
+
+            if (Countdown > Properties.Settings.Default.workTime)
+            {
                 Countdown = 0;
             }
         }

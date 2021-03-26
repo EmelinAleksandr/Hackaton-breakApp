@@ -40,6 +40,8 @@ namespace breakApp
                 25,
                 20,
                 15,
+                2,
+                1
             };
 
             comboBox2.DataSource = items2;
